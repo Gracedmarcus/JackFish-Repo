@@ -24,8 +24,9 @@ public class GameManager : MonoBehaviour
     private int collectedPellets = 0;
     private AudioSource aSrc;
     private int pelletsLeft;
+    public GameObject mainMenu;
     public Image powerUpBar;
-    public bool barBool;
+    public bool barBool, menuActive, modeToggle;
 
     //Auto-properties
     public float PowerUpTimer { get; private set; } = -1;
@@ -123,7 +124,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Frame by frame functionality.
     /// </summary>
-    void Update()
+    private void Update()
     {
         //Active power up timer
         if (PowerUpTimer > -1)
@@ -138,7 +139,7 @@ public class GameManager : MonoBehaviour
                 Event_EndPowerUp.Invoke();
                 PowerUpTimer = -1;
             }
-        }
+        }        
     }
 
     IEnumerator BarDuration() //Keeps GUI Powerup bar from exceeding total time limit of 10 seconds
