@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script by Joshua Turner
+//Last Revision 22/11/2023
+
 public class MapCamera : MonoBehaviour
 {
     //Serialized variables
     [SerializeField] private Vector3 offset;
 
     //Private variables
-    private Transform target;
+    public Transform target;
 
     /// <summary>
     /// Find necessary references
