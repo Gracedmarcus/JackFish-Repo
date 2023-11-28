@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private int collectedPellets = 0;
     private AudioSource aSrc;
     private int pelletsLeft;
-    public GameObject mainMenu;
+    public GameObject pointer;
     public Image powerUpBar;
     public bool barBool, menuActive, modeToggle;
 
@@ -132,6 +132,7 @@ public class GameManager : MonoBehaviour
             PowerUpTimer += Time.deltaTime;
             if (!barBool)
             {
+                pointer.SetActive(true);
                 StartCoroutine(BarDuration());
             }
             if(PowerUpTimer > powerUpTime)  //Power up timer finished
